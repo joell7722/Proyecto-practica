@@ -27,12 +27,13 @@ export function AboutSection() {
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
 
         {/* Presentación de César */}
-        <Reveal className="order-2 lg:order-1">
+        <div className="order-2 lg:order-1">
           <div className="relative mx-auto max-w-md">
-            
 
-            <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-navy/10">
-              <div className="relative aspect-[4/4] overflow-hidden bg-accent/30">
+            <div className="isolate overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-navy/10 [transform:translateZ(0)] will-change-transform">
+
+              {/* Fotografía */}
+              <div className="relative aspect-square overflow-hidden rounded-t-3xl bg-white [transform:translateZ(0)]">
                 <Image
                   src="/images/cesar-leal.png"
                   alt="César Leal, fundador de Leal y Asociados"
@@ -42,6 +43,7 @@ export function AboutSection() {
                 />
               </div>
 
+              {/* Información */}
               <div className="border-t border-border bg-white p-6 text-center">
                 <h3 className="font-heading text-2xl font-extrabold text-navy">
                   César Leal
@@ -56,12 +58,14 @@ export function AboutSection() {
                   comprometido con entregar soluciones claras y cercanas a cada cliente.
                 </p>
               </div>
+
             </div>
           </div>
-        </Reveal>
+        </div>
 
         {/* Información de la empresa */}
         <div className="order-1 flex flex-col gap-6 lg:order-2">
+
           <Reveal className="flex flex-col gap-5">
             <p className="text-xs font-semibold tracking-[0.2em] text-celeste uppercase">
               Quiénes Somos
@@ -85,12 +89,17 @@ export function AboutSection() {
             </p>
           </Reveal>
 
+          {/* Pilares */}
           <ul className="flex flex-col gap-4">
             {pillars.map((pillar, index) => (
               <Reveal key={pillar.title} delay={0.08 * index}>
                 <li className="flex items-start gap-4 rounded-2xl border border-border bg-card p-4 shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md">
+
                   <span className="grid size-11 shrink-0 place-items-center rounded-xl bg-accent text-accent-foreground">
-                    <pillar.icon className="size-5" aria-hidden="true" />
+                    <pillar.icon
+                      className="size-5"
+                      aria-hidden="true"
+                    />
                   </span>
 
                   <div className="flex flex-col gap-1">
@@ -102,10 +111,12 @@ export function AboutSection() {
                       {pillar.description}
                     </p>
                   </div>
+
                 </li>
               </Reveal>
             ))}
           </ul>
+
         </div>
       </div>
     </section>
