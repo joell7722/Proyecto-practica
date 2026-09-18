@@ -29,10 +29,7 @@ export function AboutSection() {
         {/* Presentación de César */}
         <Reveal className="order-2 lg:order-1">
           <div className="relative mx-auto max-w-md">
-            <div
-              aria-hidden="true"
-              className="absolute -top-5 -left-5 -z-10 size-32 rounded-3xl bg-accent"
-            />
+            
 
             <div className="overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-navy/10">
               <div className="relative aspect-[4/4] overflow-hidden bg-accent/30">
