@@ -1,8 +1,8 @@
 export const site = {
   name: 'Leal y Asociados',
   tagline: 'Consultoría contable, tributaria y financiera',
-  phoneLabel: '+56 9 1234 5678',
-  phoneHref: 'tel:+56912345678',
+  phoneLabel: '+56 9 5091 8711',
+  phoneHref: 'tel:+56950918711',
   whatsappHref:
     'https://wa.me/56950918711?text=Hola%20Leal%20y%20Asociados%2C%20necesito%20asesor%C3%ADa%20para%20mi%20empresa.',
   email: 'leal.auditores@gmail.com',

@@ -13,48 +13,71 @@ const highlights = [
 
 export function HeroSection() {
   return (
-    <section id="inicio" className="relative overflow-hidden pt-28 pb-16 sm:pt-32 lg:pb-24">
+    <section
+      id="inicio"
+      className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-20 lg:pt-32 lg:pb-24"
+    >
       <div
         aria-hidden="true"
         className="absolute inset-x-0 top-0 -z-10 h-[38rem] bg-linear-to-b from-accent/70 to-background"
       />
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.05fr_1fr] lg:gap-16 lg:px-8">
-        <Reveal className="flex flex-col gap-7">
+
+      <div className="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-12 lg:px-8">
+        
+        {/* CONTENIDO */}
+        <Reveal className="flex flex-col gap-6">
           <span className="inline-flex w-fit items-center gap-2 rounded-full border border-border bg-background/80 px-3 py-1.5 text-xs font-medium tracking-wide text-navy">
-            <ShieldCheckIcon className="size-4 text-celeste" aria-hidden="true" />
+            <ShieldCheckIcon
+              className="size-4 text-celeste"
+              aria-hidden="true"
+            />
             Consultoría contable y tributaria en Chile
           </span>
 
-          <h1 className="font-heading text-4xl leading-[1.08] font-extrabold tracking-tight text-navy text-balance sm:text-5xl lg:text-[3.4rem]">
+          <h1 className="max-w-2xl font-heading text-[2.6rem] leading-[1.08] font-extrabold tracking-tight text-navy sm:text-5xl lg:text-[3.25rem] xl:text-[3.5rem]">
             Impulsamos el crecimiento de tu empresa con soluciones contables y tributarias.
           </h1>
 
           <p className="max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Más de ocho años asesorando empresas y emprendedores con un servicio profesional,
-            cercano y orientado a resultados.
+            Más de ocho años asesorando empresas y emprendedores con un servicio
+            profesional, cercano y orientado a resultados.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row">
-            <Button size="lg" nativeButton={false} render={<a href="#contacto" />}>
+            <Button
+              size="lg"
+              nativeButton={false}
+              render={<a href="#contacto" />}
+            >
               Contáctanos
               <ArrowRightIcon data-icon="inline-end" />
             </Button>
+
             <Button
               size="lg"
               variant="outline"
-              nativeButton={false} render={<a href={site.whatsappHref} target="_blank" rel="noopener noreferrer" />}
+              nativeButton={false}
+              render={
+                <a
+                  href={site.whatsappHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
             >
               <MessageCircleIcon data-icon="inline-start" />
               Escríbenos por WhatsApp
             </Button>
           </div>
 
-          <dl className="mt-2 grid grid-cols-3 gap-4 border-t border-border pt-6">
+          {/* INDICADORES */}
+          <dl className="mt-2 grid grid-cols-3 gap-3 border-t border-border pt-6 sm:gap-6">
             {highlights.map((item) => (
               <div key={item.label} className="flex flex-col gap-1">
                 <dt className="font-heading text-2xl font-extrabold text-navy sm:text-3xl">
                   {item.value}
                 </dt>
+
                 <dd className="text-xs leading-snug text-muted-foreground sm:text-sm">
                   {item.label}
                 </dd>
@@ -63,7 +86,8 @@ export function HeroSection() {
           </dl>
         </Reveal>
 
-        <Reveal delay={0.15} className="relative">
+        {/* IMAGEN */}
+        <Reveal delay={0.15} className="relative mx-auto w-full max-w-xl">
           <div className="relative overflow-hidden rounded-3xl border border-border bg-card shadow-xl shadow-navy/10">
             <Image
               src="/images/hero-asesoria.png"
@@ -71,15 +95,19 @@ export function HeroSection() {
               width={960}
               height={720}
               priority
-              className="h-full w-full object-cover"
+              className="aspect-[4/3] h-auto w-full object-cover"
             />
           </div>
-          <div className="absolute -bottom-6 left-4 right-4 rounded-2xl border border-border bg-background/95 p-4 shadow-lg backdrop-blur sm:left-8 sm:right-auto sm:max-w-xs">
+
+          {/* TARJETA SOBRE LA IMAGEN */}
+          <div className="absolute -bottom-6 right-4 left-4 rounded-2xl border border-border bg-background/95 p-4 shadow-lg backdrop-blur sm:right-auto sm:left-8 sm:max-w-xs">
             <p className="font-heading text-sm font-bold text-navy">
               Asesoría permanente, no solo en época de impuestos
             </p>
+
             <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-              Acompañamos cada decisión de tu negocio con información clara y oportuna.
+              Acompañamos cada decisión de tu negocio con información clara y
+              oportuna.
             </p>
           </div>
         </Reveal>
